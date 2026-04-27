@@ -9,6 +9,11 @@
     --texto-fundo: rgba(81, 252, 227, 0.3);
 }
 
+.ativo {
+  background-color: var(--botao-ativo);
+  border-bottom: 4px solid var(--verde);
+}
+
 body {
     background-color: var(--cor-de-fundo);
     color: var(--branco);
