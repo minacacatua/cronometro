@@ -1,20 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap');
 
 :root {
-    --cor-de-fundo: #246c1e;
-    --verde: #76dd64;
+  --cor-de-fundo: #1a5c00;
+  --verde: #6fff57;
+  --branco: #ffffff;
+  --botao-ativo: #76cc05;
+  --botao-inativo: rgba(136, 252, 82, 0.5);
+  --texto-fundo: rgba(0, 0, 0, 0.3);
+    --cor-de-fundo: #000000;
+    --verde: #54bb00;
     --branco: #FFFFFF;
-    --botao-ativo: #4eecc5;
-    --botao-inativo: rgba(0, 219, 135, 0.5);
-    --texto-fundo: rgba(81, 252, 227, 0.3);
-}
-
-.ativo {
-  background-color: var(--botao-ativo);
-  border-bottom: 4px solid var(--verde);
+    --botao-ativo: #b4ff6e;
+    --botao-inativo: rgba(111, 255, 135, 0.5);
+    --texto-fundo: rgba(0, 0, 0, 0.767);
 }
 
 body {
+  background-color: var(--cor-de-fundo);
+  color: var(--branco);
+  font-family: "Chakra Petch", sans-serif;
     background-color: var(--cor-de-fundo);
     color: var(--branco);
     font-family: 'Chakra Petch', sans-serif;
@@ -22,6 +27,13 @@ body {
 
 
 .conteudo-principal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -32,17 +44,35 @@ body {
 }
 
 .titulo-principal {
+  text-align: left;
+  width: 100%;
+  font-size: 32px;
     text-align: left;
     width: 100%;
     font-size: 32px;
 }
 
 .titulo-principal span {
+  color: var(--verde);
     color: var(--verde);
 }
 
+
 .botao {
-    font-family: "Chakra Petch", sans-serif;
+  font-family: "Crakra Petch", sans-serif;
+  background-color: var(--botao-inativo);
+  color: var(--branco);
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+  font-size: 18px;
+  align-items: center;
+  width: 100%;
+  border-bottom: 4px solid var(--botao-ativo);
+  border-left: 2px solid var(--botao-ativo);
+  border-right: 2px solid var(--botao-ativo);
+  border-top: none;
+    font-family: 'Chakra Petch', sans-serif;
     background-color: var(--botao-inativo);
     color: var(--branco);
     display: flex;
@@ -58,10 +88,12 @@ body {
 }
 
 .botao:first-child {
+  border-radius: 40px 40px 0 0;
     border-radius: 40px 40px 0 0;
 }
 
 .botoes {
+  display: block;
     display: block;
 }
 @media screen and (min-width: 768px) {
@@ -72,7 +104,7 @@ body {
   .botao:last-child {
     border-radius: 0 40px 0 0;
   }
-    .botao:first-child {
+  .botao:first-child {
     border-radius: 40px 0 0 0;
   }
 }
@@ -82,7 +114,11 @@ body {
 }
 .abas-textos {
   background-color: var(--texto-fundo);
+.botao.ativo {
+    background-color: var(--botao-ativo);
+    border-bottom: 4px solid var(--verde);
 }
+
 .abas-textos {
   background-color: var(--texto-fundo);
   padding: 40px;
@@ -91,16 +127,75 @@ body {
 .botao.ativo {
   background-color: var(--botao-ativo);
   border-bottom: 4px solid var(--verde);
+    background-color: var(--texto-fundo);
+    padding: 40px;
+    border-radius: 0 0 40px 40px;
 }
+
 .aba-conteudo.ativo {
   display: block;
+    display: block;
 }
+
+.aba-conteudo {
+    display: none;
+}
+
 .aba-conteudo-titulo-principal {
   font-size: 28px;
   text-align: center;
+    font-size: 28px;
+    text-align: center;
 }
+
 .aba-conteudo-titulo-secundario {
   text-align: center;
   color: var(--verde);
   text-transform: uppercase;
+    text-align: center;
+    color: var(--verde);
+    text-transform: uppercase;
+}
+
+.contador {
+  font-size: 20px;
+  text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.aba-conteudo {
+  display: none;
+
+.contador-digito {
+    padding: 0 16px;
+    text-align: center;
+    min-width: 100px;
+}
+
+.contador-digito-numero {
+    font-size: 80px;
+    margin: 0;
+
+}
+
+.contador-digito-texto {
+    color: var(--verde);
+    font-size: 20px;
+    margin: 0;
+
+}
+
+@media screen and (min-width: 768px) {
+    .botoes {
+        display: flex;
+    }
+
+    .botao:first-child {
+        border-radius: 40px 0 0 0;
+    }
+
+    .botao:last-child {
+        border-radius: 0 40px 0 0;
+    }
 }
